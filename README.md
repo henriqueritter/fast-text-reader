@@ -3,6 +3,8 @@
 Aplicação para testar maneiras de ler um texto de forma mais rápida.
 Com a configuração padrão o App exibira algo em torno de 400 palavras por minuto do texto inserido.
 
+Acesse a versão do App disponível no Render! :) [Fast Text Reader](!https://fast-text-reader.onrender.com/)
+
 # TODO
 
 - Função para alterar a velocidade do texto.

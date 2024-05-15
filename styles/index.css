@@ -1,0 +1,100 @@
+:root {
+    --blue: #86baee;
+    --white: #f6f6f6;
+    --gray: #242424;
+    --black: #0b0b0b;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+strong {
+    font-weight: 700;
+}
+
+body {
+    margin-top: 2em;
+    background-color: var(--blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--gray);
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 1em;
+}
+
+textarea {
+    width: 64em;
+    height: 10em;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    color: var(--black);
+    background-color: var(--white);
+    font-size: 16px;
+    resize: none;
+}
+
+button {
+    margin-top: 1em;
+    height: 4em;
+    width: 16em;
+    border-radius: 2%;
+    font-weight: 500;
+}
+
+label {
+    margin-top: 1em;
+    width: 64em;
+    min-height: 1em;
+    border: 2px solid #ccc;
+    background-color: var(--white);
+    color: var(--black);
+    border-radius: 4px;
+    text-align: start;
+    padding: 0.75em 0.5em;
+}
+
+footer {
+    background-color: #4a4a4f;
+    color: #fff;
+    padding: 0.5em;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer svg {
+    color: #fcfcfc;
+    width: 2em;
+    height: 2em;
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+footer a {
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    color: #d5d5d5;
+    transition: 0.2s;
+}
+
+footer a:hover {
+    color: #fff;
+}

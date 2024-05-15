@@ -8,13 +8,29 @@ window.onload = function() {
     initialText = label;
 }
 
-function setTextArea(value) {
+async function sleep(time) {
+    await new Promise(resolve => setTimeout(resolve, time));
+}
+
+function updateInitialTextValue(value) {
     initialText = value;
 }
 
-function generate() {
+function parseTextToArrayOfWords(text) {
+    const words = text.replace(/\n/g, " ").split(" ");
+
+    return words;
+}
+
+function parseFirstLettersOfWordToCamelCase(word) {
+    if (word <= wordMinimumLettersToParse) return;
+    const parsedWord = `<strong>${word[0].toUpperCase()}${word[1].toUpperCase()}</strong>${word.slice(2)}`;
+    return parsedWord;
+}
+
+function generateTextWithUpperCaseOnFirstLetters() {
     pauseLoop = true;
-    const words = initialText.split(" ");
+    const words = parseTextToArrayOfWords(initialText);
 
     const parsedWords = [];
     for (let i = 0; i < words.length; i++) {
@@ -28,9 +44,7 @@ function generate() {
     setTextToLabel(parsedWords, true);
 }
 
-async function sleep(time) {
-    await new Promise(resolve => setTimeout(resolve, time));
-}
+
 
 async function speedText() {
     pauseLoop = false;
@@ -61,20 +75,7 @@ async function speedText() {
     }
 }
 
-function parseTextToArrayOfWords(text) {
-    const words = text.replace(/\n/g, " ").split(" ");
-
-    return words;
-}
-
-
 async function setTextToLabel(text, joinText = false) {
     const label = document.getElementById("post-text");
     label.innerHTML = joinText ? text.join(" ") : text;
-}
-
-function parseFirstLettersOfWordToCamelCase(word) {
-    if (word <= wordMinimumLettersToParse) return;
-    const parsedWord = `<strong>${word[0].toUpperCase()}${word[1].toUpperCase()}</strong>${word.slice(2)}`;
-    return parsedWord;
 }

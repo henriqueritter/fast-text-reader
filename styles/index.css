@@ -1,5 +1,6 @@
 :root {
     --blue: #86baee;
+    --blue-dark: #6d9fd1;
     --white: #f6f6f6;
     --gray: #242424;
     --black: #0b0b0b;
@@ -18,7 +19,6 @@ strong {
 }
 
 body {
-    margin-top: 2em;
     background-color: var(--blue);
     display: flex;
     flex-direction: column;
@@ -26,6 +26,15 @@ body {
     align-items: center;
     text-align: center;
     color: var(--gray);
+}
+
+header {
+    background-color: var(--blue-dark);
+    color: var(--black);
+    width: 100%;
+    padding: 1.5em 0em;
+    text-align: center;
+    justify-content: center;
 }
 
 section {
@@ -70,8 +79,8 @@ label {
 }
 
 footer {
-    background-color: #4a4a4f;
-    color: #fff;
+    background-color: var(--blue-dark);
+    color: var(--black);
     padding: 0.5em;
     text-align: center;
     position: fixed;
@@ -80,21 +89,25 @@ footer {
 }
 
 footer svg {
-    color: #fcfcfc;
+    color: var(--black);
     width: 2em;
     height: 2em;
     margin-bottom: 1em;
     margin-left: 1em;
 }
 
+footer svg:hover {
+    color: var(--gray);
+}
+
 footer a {
     text-decoration: none;
     font-size: 1em;
     font-weight: bold;
-    color: #d5d5d5;
+    color: var(--black);
     transition: 0.2s;
 }
 
 footer a:hover {
-    color: #fff;
+    color: var(--gray);
 }

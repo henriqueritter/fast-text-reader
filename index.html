@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fast Read Text App</title>
+    <title>Fast Text Reader - App</title>
     <link rel="stylesheet" href="styles/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,28 +17,15 @@
     <header>
         <h1>Fast Text Reader</h1>
         <h4>Cole um texto abaixo e clique em um dos dois botões para gerar a leitura dinâmica.</h4>
+        <h5>Com a configuração é possível ler algo próximo a 400 palavras por minuto com a leitura que não necessita mover os olhos.</h5>
 
     </header>
     <section>
-        <textarea id="initial-text" onchange=setTextArea(this.value)>Este é texto simples utilizado apenas para teste. Você pode clicar em um dos dois botões abaixo para executar uma das funções.</textarea>
+        <textarea id="initial-text" onchange=updateInitialTextValue(this.value)>Este é texto simples utilizado apenas para teste. Você pode clicar em um dos dois botões abaixo para executar uma das funções.</textarea>
         <div>
-            <button onclick=generate()>Texto com destaque nas iniciais de cada palavra</button>
+            <button onclick=generateTextWithUpperCaseOnFirstLetters()>Texto com destaque nas iniciais de cada palavra</button>
             <button onclick=speedText()>Texto divido em palavras que aparecem em um único lugar</button>
         </div>
-
-
-
-        <label id="post-text" for=""></label>
-
-        <label for="">Os Conceitos Básicos do Azure são uma série de três roteiros de aprendizagem que ajudam você a se familiarizar com o Azure e seus diversos serviços e recursos.
-
-            Se você está interessado em serviços de computação, rede ou armazenamento, aprendendo sobre as melhores práticas de segurança na nuvem ou explorando a opções de governança e gerenciamento, considere os Conceitos Básicos do Azure como seu guia organizado para o Azure.
-            
-            Os Conceitos Básicos do Azure incluem exercícios interativos que oferecem experiência prática com o Azure. Muitos exercícios fornecem um ambiente temporário do portal do Azure chamado área restrita, que permite que você pratique a criação de recursos de nuvem gratuitamente em seu próprio ritmo.
-            
-            Não é necessária experiência técnica de TI, no entanto, ter conhecimento geral de TI ajudará você a obter o máximo de sua experiência de aprendizado.</label>
-
-
     </section>
     <footer>
         <div id="contact">

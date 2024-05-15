@@ -17,7 +17,8 @@
     <header>
         <h1>Fast Text Reader</h1>
         <h4>Cole um texto abaixo e clique em um dos dois botões para gerar a leitura dinâmica.</h4>
-        <h5>Com a configuração é possível ler algo próximo a 400 palavras por minuto com a leitura que não necessita mover os olhos.</h5>
+        <h5>Com a configuração padrão é possível ler algo próximo a 400 palavras por minuto com a leitura que não necessita mover os olhos.</h5>
+        <h5>Palavras que contem caracteres estes caracteres (,.;:) foram configuradas para permanecem um tempo maior na tela.</h5>
 
     </header>
     <section>
@@ -26,6 +27,13 @@
             <button onclick=generateTextWithUpperCaseOnFirstLetters()>Texto com destaque nas iniciais de cada palavra</button>
             <button onclick=speedText()>Texto divido em palavras que aparecem em um único lugar</button>
         </div>
+
+        <div>
+            <span>Quantidade de palavras por minuto: </span>
+            <input id="words-per-minute" type="number" placeholder="400">
+        </div>
+
+        <label id="post-text" for=""></label>
     </section>
     <footer>
         <div id="contact">

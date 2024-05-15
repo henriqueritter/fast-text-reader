@@ -49,8 +49,14 @@ function generateTextWithUpperCaseOnFirstLetters() {
 async function speedText() {
     pauseLoop = false;
     const words = parseTextToArrayOfWords(initialText);
+    const wordsPerMinute = document.getElementById("words-per-minute").value ? document.getElementById("words-per-minute").value : 400;
 
-    let speed = 150;
+    //150=400wpm
+    const defaultSpeed = 150;
+    const defaultWordsPerMinute = 400;
+    const speedWordsPerMinute = defaultSpeed * defaultWordsPerMinute / wordsPerMinute;
+
+    let speed = speedWordsPerMinute;
 
     for (let i = 3; i > 0; i--) {
         if (pauseLoop) { return }
@@ -60,15 +66,15 @@ async function speedText() {
 
     for (let i = 0; i < words.length; i++) {
         if (pauseLoop) { return }
-        speed = 150;
-        if (words[i].indexOf("?") != -1) speed = 300;
-        if (words[i].indexOf(",") != -1) speed = 250;
-        if (words[i].indexOf(".") != -1) speed = 250;
-        if (words[i].indexOf("(") != -1) speed = 750;
-        if (words[i].indexOf(")") != -1) speed = 750;
-        if (words[i].indexOf(";") != -1) speed = 300;
-        if (words[i].indexOf(":") != -1) speed = 300;
-        if (words[i] == "") speed = 300;
+        speed = speedWordsPerMinute;
+        if (words[i].indexOf("?") != -1) speed = speedWordsPerMinute * 2;
+        if (words[i].indexOf(",") != -1) speed = speedWordsPerMinute * 1.6;
+        if (words[i].indexOf(".") != -1) speed = speedWordsPerMinute * 1.6;
+        if (words[i].indexOf("(") != -1) speed = speedWordsPerMinute * 4;
+        if (words[i].indexOf(")") != -1) speed = speedWordsPerMinute * 4;
+        if (words[i].indexOf(";") != -1) speed = speedWordsPerMinute * 2;
+        if (words[i].indexOf(":") != -1) speed = speedWordsPerMinute * 2;
+        if (words[i] == "") speed = speedWordsPerMinute * 2;
         setTextToLabel(words[i]);
 
         await sleep(speed);

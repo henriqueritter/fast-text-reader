@@ -1,6 +1,7 @@
 # Fast Text Reader
 
 Aplicação para testar maneiras de ler um texto de forma mais rápida.
+Com a configuração padrão o App exibira algo em torno de 400 palavras por minuto do texto inserido.
 
 # TODO
 

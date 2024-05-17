@@ -2,6 +2,7 @@
     --blue: #86baee;
     --blue-dark: #6d9fd1;
     --white: #f6f6f6;
+    --light-gray: #ccc;
     --gray: #242424;
     --black: #0b0b0b;
 }
@@ -14,25 +15,20 @@
     font-style: normal;
 }
 
-strong {
-    font-weight: 700;
-}
-
 body {
     background-color: var(--blue);
+    color: var(--gray);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
-    color: var(--gray);
 }
 
 header {
     background-color: var(--blue-dark);
     color: var(--black);
     width: 100%;
-    padding: 1.5em 0em;
+    padding: 1em 0em;
     text-align: center;
     justify-content: center;
 }
@@ -46,30 +42,35 @@ section {
 }
 
 textarea {
-    width: 64em;
+    width: 100%;
     height: 10em;
-    padding: 12px 20px;
+    padding: 0.5em 0.75em;
     box-sizing: border-box;
-    border: 2px solid #ccc;
+    border: 1px solid var(--light-gray);
     border-radius: 4px;
     color: var(--black);
     background-color: var(--white);
-    font-size: 16px;
+    font-size: 1em;
     resize: none;
 }
 
 button {
-    margin-top: 1em;
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+    margin: 0.75em 0.5em;
+    padding: 0.5em 0.25em;
     height: 4em;
     width: 16em;
-    border-radius: 2%;
     font-weight: 500;
 }
 
 input {
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+    text-align: end;
+    width: 10%;
     margin: 1em;
     padding: 0.25em;
-    border: none;
 }
 
 span {
@@ -77,15 +78,20 @@ span {
     justify-content: center;
 }
 
+strong {
+    font-weight: 700;
+}
+
 label {
     margin-top: 1em;
-    width: 64em;
     min-height: 1em;
-    border: 2px solid #ccc;
+    min-width: 95%;
+    max-width: 48em;
+    border: 0.25px solid #ccc;
     background-color: var(--white);
     color: var(--black);
     border-radius: 4px;
-    text-align: start;
+    text-align: center;
     padding: 0.75em 0.5em;
 }
 
@@ -105,10 +111,12 @@ footer svg {
     height: 2em;
     margin-bottom: 1em;
     margin-left: 1em;
+    transition: 0.4s;
 }
 
 footer svg:hover {
-    color: var(--gray);
+    color: var(--white);
+    transition: 0.4s;
 }
 
 footer a {
@@ -116,9 +124,33 @@ footer a {
     font-size: 1em;
     font-weight: bold;
     color: var(--black);
-    transition: 0.2s;
+    transition: 0.4s;
 }
 
 footer a:hover {
-    color: var(--gray);
+    color: var(--white);
+    transition: 0.4s;
+}
+
+@media(max-width:640px) {
+    html {
+        font-size: 80%;
+    }
+    #container-buttons button {
+        font-size: 1em;
+    }
+    #post-text {
+        font-size: 1.5em;
+        margin: 0.25em;
+    }
+}
+
+@media(max-width:450px) {
+    html {
+        font-size: 70%;
+    }
+    #container-buttons button {
+        margin: 0.25em;
+        font-size: 1em;
+    }
 }
